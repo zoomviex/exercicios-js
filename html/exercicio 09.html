@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="exercício-01.css">
+   <!-- <script src="../js/exercicios.js"></script> -->
+   <title>Aula 09 - Ex - Back-End</title>
+</head>
+<body>
+   <p>
+    9) As maçãs custam R$ 0,30 cada se forem compradas menos do que uma dúzia, e R$ 0,25 se forem compradas pelo menos doze. Escreva um programa que leia o número de maçãs compradas, calcule e escreva o valor total da compra.”
+   </p>
+    <form>
+        <input type="text" id="quantMacas" placeholder="Quantidade de maçãs">
+        <button type="button" onclick="macaCheck()">Verificar</button>
+    </form action="">
+    <span id="saidaTexto"></span>
+</body>
+</html>
+
+<script>
+    function macaCheck() {
+        let maca = (document.getElementById('quantMacas').value)
+        let macaPreco
+
+        if (maca >= 12){
+            macaPreco = maca * 0.25
+            document.getElementById("saidaTexto").innerHTML = `O valor de ${maca} maçãs é R$${macaPreco.toFixed(2)}`
+        }else{
+            macaPreco = maca * 0.30
+            document.getElementById("saidaTexto").innerHTML = `O valor de ${maca} maçãs é R$${macaPreco.toFixed(2)}`
+        }
+    }
+</script>

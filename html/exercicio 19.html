@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="exercício-01.css">
+   <!-- <script src="../js/exercicios.js"></script> -->
+   <title>Aula 19 - Ex - Back-End</title>
+</head>
+<body>
+   <p>
+    19) Escreva um programa para ler 3 valores e escrever a soma dos 2 maiores. Considere que o usuário
+    não informará valores iguais.
+   </p>
+    <form>
+        <input type="text" id="n-1" placeholder="Digite um valor">
+        <input type="text" id="n-2" placeholder="Digite um valor">
+        <input type="text" id="n-3" placeholder="Digite um valor">
+        <button type="button" onclick="sum()">Somar</button>
+    </form action="">
+    <span id="saidaTexto"></span>
+</body>
+</html>
+
+<script>
+    function sum() {
+        let number1= parseFloat(document.getElementById("n-1").value);
+        let number2= parseFloat(document.getElementById("n-2").value);
+        let number3= parseFloat(document.getElementById("n-3").value);
+    
+
+        if (number1 > number2 && number3 > number2){
+            document.getElementById("saidaTexto").innerHTML = `${number1 + number3}`
+        }else if (number1 > number3 && number2 > number3){
+            document.getElementById("saidaTexto").innerHTML = `${number1 + number2}`
+        }else if (number1 < number2 && number1 < number3){
+            document.getElementById("saidaTexto").innerHTML = `${number2 + number3}`
+        }else{
+            window.alert('Digite três valores diferentes')
+        }
+    }
+</script>

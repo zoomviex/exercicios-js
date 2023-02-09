@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="exercício-01.css">
+   <!-- <script src="../js/exercicios.js"></script> -->
+   <title>Aula 06 - Ex - Back-End</title>
+</head>
+<body>
+   
+   <section id="EX06">
+      <p>
+         6) Um motorista de táxi deseja calcular o rendimento de seu carro na praça. Sabendo-se que o preço do combustível é de R$ 4,87, escreva um programa para ler: a marcação do odômetro (Km) no início do dia, a marcação (Km) no final do dia, o número de litros de combustível gasto e o valor total (R$) recebido dos passageiros. Calcular e escrever: a média do consumo em Km/L e o lucro (líquido) do dia. 
+      </p>
+      <form action="">
+         <input required type="text" id="inicio" placeholder="Odômetro inicial">
+         <input required type="text" id="fim" placeholder="Odômetro final">
+         <input required type="text" id="litros" placeholder="Litros consumidos">
+         <input required type="text" id="total" placeholder="Pagamento total">
+         <button onclick="calculoLiq()">Calcular</button>
+      </form>
+      <div id="saidaTexto"></div>
+   </section>
+
+</body>
+</html>
+
+<script>
+   function calculoLiq(){
+      let iniOdo = (document.getElementById("inicio").value);
+      let fimOdo = (document.getElementById("fim").value);
+      let total = (document.getElementById("total").value);
+      let litros = (document.getElementById("litros").value);
+      let mediaCons = (fimOdo - iniOdo) / litros;
+      let custoLitro = 4.87;
+      let pagLiq = total - (litros * custoLitro);
+      let saidaTexto = document.getElementById("saidaTexto");
+
+      saidaTexto.innerHTML = `<p> Média de consumo em KM/l: ${mediaCons.toFixed(2)}</p>
+      <p> e o faturamento do dia foi de R$${pagLiq.toFixed(2)}</p>`;
+   }
+</script>

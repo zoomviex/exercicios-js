@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+   <link rel="stylesheet" href="exercício-01.css">
+   <!-- <script src="../js/exercicios.js"></script> -->
+   <title>Aula 15 - Ex - Back-End</title>
+</head>
+<body>
+   <p>
+    15) Escreva um programa para ler o número de lados de um polígono regular e a medida do lado (em
+    cm). Calcular e imprimir o seguinte:
+    - Se o número de lados for igual a 3 escrever TRIÂNGULO e o valor do seu perímetro.
+    - Se o número de lados for igual a 4 escrever QUADRADO e o valor da sua área.
+    - Se o número de lados for igual a 5 escrever PENTÁGONO.
+    Observação: Considere que o usuário só informará os valores 3, 4 ou 5.
+   </p>
+    <form id="question" class="d-flex flex-column p-2 w-25">
+        Número de lados:
+        <input class="m-1" type="number" id="numSides"  placeholder="Indique o número de lados">
+        <button type="button" onclick="figureCheck()">Ok!</button>
+
+        <div id="inputs-sides"></div>
+    </form action="">
+</body>
+</html>
+
+<script>
+
+    function figureCheck (){
+        let sideQuant= parseFloat(document.getElementById("numSides").value);
+        let geometricalForm = ""
+
+        if (sideQuant== 3) {
+          
+            geometricalForm = "triangle"
+            document.getElementById("inputs-sides").innerHTML = `
+            <p>
+                Indique os valores de cada lado do triângulo para calcular seuperímetro:
+            </p>
+            <form action="" class="d-flex flex-column">
+                <input class="m-1" type="number" id="l-1"  placeholder="Tamanho em cm">
+                <input class="m-1" type="number" id="l-2" placeholder="Tamanho em cm">
+                <input class="m-1" type="number" id="l-3" placeholder="Tamanho em cm"> 
+                <button type="button" onclick="trianglePerimeter()">Verificar</button>
+                <p id="saidaTexto"></p>
+            </form>`
+        }else if (sideQuant== 4) {
+            geometricalForm = "quadrado"
+            document.getElementById("inputs-sides").innerHTML = `
+            <p>
+                Indique os valores de cada lado do triângulo para calcular seuperímetro:
+            </p>
+            <form action="" class="d-flex flex-column">
+                <input class="m-1" type="number" id="l-1"  placeholder="Tamanho em cm">
+                <button type="button" onclick="squareArea()">Verificar</button>
+                <p id="saidaTexto"></p>
+            </form>`
+        }else if (sideQuant== 5) {
+            geometricalForm = "pentagon"
+            document.getElementById("inputs-sides").innerHTML = `
+            <p>
+                A figura é um pentágono.
+            </p>`
+        }else{
+           window.alert("Digite um valo válido! Ex: 3, 4 ou 5")
+        }
+    }
+
+    function trianglePerimeter() {
+        let side1 = parseFloat( document.getElementById('l-1').value)
+        let side2 = parseFloat( document.getElementById('l-2').value)
+        let side3 = parseFloat( document.getElementById('l-3').value)
+
+        let perimetro = side1 + side2 + side3
+
+        if (geometricalForm = 'triangle'){
+            document.getElementById("saidaTexto").innerHTML = `O perímetro do triângulo é igual a ${perimetro}cm` 
+        }
+    }
+
+    function squareArea() {
+        let side1 = parseFloat( document.getElementById('l-1').value)
+
+        let area = side1**2
+
+        if (geometricalForm = 'quadrado'){
+            document.getElementById("saidaTexto").innerHTML = `A área do quadrado é igual a ${area}cm²` 
+        }
+    }
+</script>
