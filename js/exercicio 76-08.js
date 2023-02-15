@@ -6,7 +6,7 @@ function numberController(){
    let randomNumber = 0;
 
    for (let fiftyNumbers = 1; fiftyNumbers <= 50; fiftyNumbers++){
-       randomNumber = Math.floor(Math.random()* 1000) + 1; 
+       randomNumber = Math.floor(Math.random()* 1000); 
 
        if (randomNumber > highest){
            highest = randomNumber
@@ -15,5 +15,5 @@ function numberController(){
        }
    }
    
-   document.querySelector("#saidaTexto").innerHTML = exit = `No maior numero foi ${highest} e menor foi ${lowest} e a média entre os dois foi ${(highest + lowest) /2}`
+   document.querySelector("#saidaTexto").innerHTML = exit = `No maior numero foi ${highest} e menor foi ${lowest} e a média entre os dois foi ${(highest + lowest) / 2}`
 }
