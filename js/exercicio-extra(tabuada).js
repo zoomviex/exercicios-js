@@ -1,13 +1,12 @@
-function multiplicationTable(){
-   let exit = ""
-   let number = parseInt(document.querySelector("#user--number").value);
+function multipliTableController(){
+  let number = parseInt(document.querySelector("#user--number").value);
+  let result = document.querySelector("#saidaTexto");
+  let exit = ""
 
-   for(let multiple = 1; multiple <= 10; multiple++){
-    if(multiple <= 10){
-      document.querySelector("#saidaTexto").innerHTML = exit =  result = number * multiple
-    } 
+
+  for(let i = 1; i <= 10; i++){
+    exit += `${number} X ${i} = ${number * i}</br>`
+    
+    result.innerHTML = exit; 
    }
-
-}
-
-
+  }

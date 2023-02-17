@@ -9,16 +9,19 @@
    <title> Exercício Extra (Tabuada) - Back-End</title>
 </head>
 <body>
-   <h4>
+   <p>
     Indique um número positivo e inteiro qualquer e receba sua tabuada
-   </h4>
+   </p>
 
     <form>
-        <input type="text" id="user--number" placeholder="Digite um valor">
-        <button type="button" onclick="
-        multiplicationTable()">Mostrar tabuada</button>
+        <div class="mb-3">
+            <input type="number" id="user--number" placeholder="Digite um valor">
+        </div>
+        <button type="button" class="btn btn-primary" onclick="
+        multipliTableController()">Mostrar tabuada</button>
     </form action="">
-    <span id="saidaTexto"></span>
+
+    <span id="saidaTexto" class="text center mt-5"></span>
 
 </body>
 </html>
