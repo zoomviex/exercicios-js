@@ -20,7 +20,7 @@ function figureController (){
        geometricalForm = "quadrado"
        document.getElementById("inputs-sides").innerHTML = `
        <p>
-           Indique os valores de cada lado do triângulo para calcular seuperímetro:
+           Indique o valor dos lados do quadrado para calcular seuperímetro:
        </p>
        <form action="">
            <input type="number" id="l-1"  placeholder="Tamanho em cm">
