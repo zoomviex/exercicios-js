@@ -1,4 +1,4 @@
-function figureCheck (){
+function figureController (){
    let sideQuant= parseFloat(document.getElementById("numSides").value);
    let geometricalForm = ""
 
@@ -9,10 +9,10 @@ function figureCheck (){
        <p>
            Indique os valores de cada lado do triângulo para calcular seuperímetro:
        </p>
-       <form action="" class="d-flex flex-column">
-           <input class="m-1" type="number" id="l-1"  placeholder="Tamanho em cm">
-           <input class="m-1" type="number" id="l-2" placeholder="Tamanho em cm">
-           <input class="m-1" type="number" id="l-3" placeholder="Tamanho em cm"> 
+       <form action="">
+           <input type="number" id="l-1"  placeholder="Tamanho em cm">
+           <input type="number" id="l-2" placeholder="Tamanho em cm">
+           <input type="number" id="l-3" placeholder="Tamanho em cm"> 
            <button type="button" onclick="trianglePerimeter()">Verificar</button>
            <p id="saidaTexto"></p>
        </form>`
@@ -22,8 +22,8 @@ function figureCheck (){
        <p>
            Indique os valores de cada lado do triângulo para calcular seuperímetro:
        </p>
-       <form action="" class="d-flex flex-column">
-           <input class="m-1" type="number" id="l-1"  placeholder="Tamanho em cm">
+       <form action="">
+           <input type="number" id="l-1"  placeholder="Tamanho em cm">
            <button type="button" onclick="squareArea()">Verificar</button>
            <p id="saidaTexto"></p>
        </form>`
