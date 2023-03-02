@@ -1,34 +1,49 @@
-var alunos = [];
+function enviarAvaliacao() {
+  let nome = document.getElementById("nome").value;
+  let avaliacao1 = parseFloat(document.getElementById("avaliacao1").value);
+  let avaliacao2 = parseFloat(document.getElementById("avaliacao2").value);
 
-function maincontroller() {
-  var nome = document.querySelector("#nome").value;
-  var nota1 = parseFloat(document.querySelector("#nota1").value);
-  var nota2 = parseFloat(document.querySelector("#nota2").value);
-
-  if (cadastrar(nome, nota1, nota2)) {
-    //mostrar("Cadastrado!");
-    alert("Cadastrado!");
+  let errosEncontrados = validarDados(nome, avaliacao1, avaliacao2);
+  if (errosEncontrados != "") {
+      alert(errosEncontrados);
+      return
   }
+
+  let media = calculoMedia(avaliacao1, avaliacao2);
+  let resultado = montarResultado(media);
+
+  document.getElementById("saidaTexto").innerHTML = "Resultado: " + resultado + " - Media: " + media;
 }
 
-function cadastrar(nome = "", nota1 = 0, nota2 = 0) {
-  var aluno = nome + ", " + nota1 + ", " + nota2 + ", " + (nota1 + nota2 / 2);
-  alunos[alunos.length] = aluno;
-  return true;
-}
-
-function listar() {
-  var lista = "";
-  for (var index = 0; index < alunos.length; index++) {
-    lista += alunos[index] + "<br>";
+function validarDados(nomeAluno = "", avalicao1Aluno = 0, avalicao2Aluno = 0) {
+  let erros = "";
+  if (!nomeAluno) {
+      erros += "Nome em branco.\n";
   }
-  return lista;
+
+  if (avalicao1Aluno < 0 || avalicao1Aluno > 10 || Number.isNaN(avalicao1Aluno)) {
+      erros += "Valor da Avaliação 1 esta fora do padrão (0,0 a 10,0).\n";
+  }
+
+  if (avalicao2Aluno < 0 || avalicao2Aluno > 10 || Number.isNaN(avalicao2Aluno)) {
+      erros += "Valor da Avaliação 2 esta fora do padrão (0,0 a 10,0).\n";
+  }
+
+  return erros;
 }
 
-function mostrar(texto = "") {
-  document.querySelector("#saida").innerHTML = texto;
+function calculoMedia(avaliacao1Aluno = 0, avaliacao2Aluno = 0) {
+  return (avaliacao1Aluno + avaliacao2Aluno) / 2;
 }
 
+function montarResultado(mediaAluno = 0) {
+  if (mediaAluno >= 6) {
+      return "Aprovado";
+  } else if (mediaAluno >= 3 && mediaAluno < 6) {
+      return "Exame";
+  } else {
+      return "Reprovado";
+  }
 
-
+}
 //ToDo: executar e analisar a divisão de responsabilidade de cada função.

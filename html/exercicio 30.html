@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -5,20 +6,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logica - Exercicios - Algoritimos - Ex30</title>
+    <title>Exercicios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <p>Ler o nome de um aluno, as notas da la. e 2a. avaliações. Validar as notas aceitando apenas notas válidas para cada avaliação (0,0 a 10,0). Caso seja fornecida uma nota inválida deve ser impressa uma mensagem para o usuário. Após a entrada das notas
-        deve ser impressa a seguinte mensagem: "Os dados estão corretos (S/N)?", aceitando apenas a letra S ou N maiúsculas como resposta. Caso o usuário responda a letra N, o programa deverá solicitar novos dados.
-    </p>
-    <form>
-        <input type="text" id="nome" placeholder="Nome">
-        <input type="number" id="nota1" placeholder="Nota 1">
-        <input type="number" id="nota2" placeholder="Nota 2">
-        <button type="button" onclick="maincontroller()">Cadastrar</button>
-        <button type="button" onclick="mostrar(listar())">Listar</button>
-    </form>
-    <span id="saida"></span>
+    <section class="container">
+        <!-- <p>
+            30) Ler o nome de um aluno, as notas da la. e 2a. avaliações. Validar as notas aceitando apenas notas
+            válidas para cada avaliação (0,0 a 10,0). Caso seja fornecida uma nota inválida deve ser impressa uma
+            mensagem para o usuário.
+            Após a entrada das notas deve ser impressa a seguinte mensagem: "Os dados estão corretos (S/N)?", aceitando
+            apenas a letra S ou N maiúsculas como resposta. Caso o usuário responda a letra N, o programa deverá
+            solicitar novos dados. Calcular a média do aluno. Após este cálculo a tela deve ser limpa e os resultados
+            impressos conforme o lay-out abaixo:
+            ALUNO: XXXXXXXXX
+            -----------------------------------------------------------------------------
+            1º. Avaliação 2º. Avaliação Média Resultado
+            XX.X XX.X XX.X XXXXXXX
+            -----------------------------------------------------------------------------
+            Obs: Você deverá obter nota 6,0 no exame para aprovação!
+            Novo cálculo (S/N)?
+            Na coluna "Resultado" deverão ser impressas as seguintes mensagens, conforme os casos abaixo:
+            Aprovado : média maior ou igual a 6,0
+            Reprovado: média menor que 3,0
+            Em Exame: média maior ou igual a 3,0 e menor que 6,0
+            >> Note que a observação só deverá ser impressa caso o aluno fique em exame.
+        </p> -->
+        <h2>Controle de notas</h2>
+        <form action="" class="row g-3 align-items-end">
+            <div class="col">
+                <label for="nome" class="">Nome:</label>
+                <input type="text" class="form-control" id="nome" placeholder="">
+            </div>
+            <div class="col">
+                <label for="avaliacao1" class="">Avaliação 1</label>
+                <input type="number" class="form-control" id="avaliacao1" placeholder="">
+            </div>
+            <div class="col">
+                <label for="avaliacao2" class="">Avaliação 2</label>
+                <input type="number" class="form-control" id="avaliacao2" placeholder="">
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" type="button" onclick="enviarAvaliacao()">Entrar</button>
+            </div>
+        </form>
+        <div id="saidaTexto" class="mt-5">
+            ...
+        </div>
+    </section>
 </body>
 
 </html>
+<script src="../js/exercicio 30.js"></script>
